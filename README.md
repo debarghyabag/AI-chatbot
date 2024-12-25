@@ -1,6 +1,7 @@
 # AI-chatbot
 Chatbot for pdf assistance created by using RAG that runs locally. 
 ....................................................................
+
 step1:
 install download and install ollama from https://ollama.com/
 
