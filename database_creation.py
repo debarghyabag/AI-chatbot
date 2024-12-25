@@ -26,6 +26,10 @@ def main():
     # Create or update the Chroma database
     documents = load_documents()
     chunks = split_documents(documents)
+    
+    # Uncomment the following line to visualize chunks
+    visualize_chunks(chunks)
+    
     add_to_chroma(chunks)
 
 
@@ -38,7 +42,7 @@ def load_documents():
 def split_documents(documents: list[Document]):
     """Split documents into smaller chunks."""
     text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=800,  # Each chunk will be 800 characters
+        chunk_size=400,  # Each chunk will be 800 characters
         chunk_overlap=80,  # Each chunk overlaps by 80 characters with the next
         length_function=len,
         is_separator_regex=False,
@@ -98,6 +102,19 @@ def calculate_chunk_ids(chunks):
         chunk.metadata["id"] = chunk_id
 
     return chunks
+
+
+def visualize_chunks(chunks):
+    """Print chunks and their metadata for visualization."""
+    print("\n✨ Visualizing Chunks")
+    for chunk in chunks:
+        source = chunk.metadata.get("source", "Unknown Source")
+        page = chunk.metadata.get("page", "Unknown Page")
+        chunk_id = chunk.metadata.get("id", "Unknown ID")
+        print(f"Source: {source}")
+        print(f"Page: {page}")
+        print(f"Chunk ID: {chunk_id}")
+        print(f"Content: {chunk.page_content}\n{'-' * 80}")
 
 
 def clear_database():
