@@ -52,7 +52,7 @@ def query_rag(query_text: str):
     prompt = prompt_template.format(context=context_text, question=query_text)
 
     # Query the Ollama model (or your chosen LLM model)
-    model = Ollama(model="phi3")  # You can change the model name as needed
+    model = Ollama(model="phi3.5")  # You can change the model name as needed
     response_text = model.invoke(prompt)
 
     # Collect document sources
