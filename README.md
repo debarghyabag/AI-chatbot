@@ -12,7 +12,7 @@ step3:
 extract the zip file and create a folder named docs within it.
 
 step4:
-open the folder in vscode and run pip install -r prerequisite.txt (***if you get msvc error or onnxruntime errorgo to https://visualstudio.microsoft.com/downloads/?q=build+tools, download and install the exe the go to the individual components and install MSVC v142-VS2019 C++ X64/X86 build tools also Go to the Microsoft Visual C++ Redistributable page. Download and install the version matching your system architecture (x64 for 64-bit systems***).
+open the folder in vscode and run pip install -r prerequisite.txt (***if you get msvc error or onnxruntime error go to https://visualstudio.microsoft.com/downloads/?q=build+tools, download and install the exe the go to the individual components and install MSVC v142-VS2019 C++ X64/X86 build tools also Go to the Microsoft Visual C++ Redistributable page. Download and install the version matching your system architecture (x64 for 64-bit systems***).
 
 step5:
 move the documents to the 'docs' folder
